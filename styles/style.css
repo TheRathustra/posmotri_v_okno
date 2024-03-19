@@ -9,13 +9,15 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  align-items: center;
 }
 
 h1,
@@ -35,4 +37,280 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #545050;
+}
+
+/*----------Разбивка по блокам----------*/
+
+.content {
+  display: flex;
+  align-items: end;
+  max-width: 1140px;
+  margin: auto;
+  gap: 30px;
+}
+
+.content__details {
+  width: 399px;
+}
+
+.result {
+  width: 711px;
+}
+
+.result__video-container {
+  position: relative;
+  height: 386px;
+}
+
+.result__video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*----------Левый блок----------*/
+
+.search-form {
+  margin-block-start: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid var(--white);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background-color: var(--white);
+}
+
+.search-form__label {
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid var(--white);
+  outline-offset: 1px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 1px;
+}
+
+.search-form__label-text {
+  appearance: none;
+}
+
+.search-form__label-text:hover {
+  text-decoration: underline;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+/*----------Правый блок----------*/
+
+.content__list {
+  position: relative;
+  margin-block-start: 26px;
+  height: 298px;
+  overflow-y: auto;
+}
+
+.content__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.content__list-item {
+  height: 107px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
+
+.content__video-card {
+  display: flex;
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.content__video-card-description-container:hover {
+  text-decoration: underline;
+}
+
+.content__video-card-description-container:active {
+  background-color: var(--gray);
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__list-item:focus {
+  outline: none;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 1px;
+}
+
+.button {
+  border: 1px solid var(--white);
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:active {
+  background-color: var(--gray);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/*----------Тексты----------*/
+
+.search-form__textfield {
+  min-width: 225px;
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  border-right: none;
+  border-left: none;
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: var(--white);  
+  background-color: transparent;
+}
+
+.title {
+  font-family: "Oswald";
+  color: var(--white);
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  text-transform: uppercase;
+}
+
+.content__video-card-title {
+  font-family: "Oswald";
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+}
+
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.search-form__submit-button {
+  padding: 6px 73.5px;
+  align-self: flex-end;
+}
+
+.more-button {
+  padding: 6px 146.5px;
+  text-wrap: nowrap;
+  width: 100%;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+}
+
+.content__accent {
+  color: var(--gray);
+}
+
+/*----------Служебное----------*/
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
