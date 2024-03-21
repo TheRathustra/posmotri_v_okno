@@ -150,10 +150,10 @@ ol {
 
 .content__list {
   position: relative;
+  width: fit-content;
   height: 298px;
   margin-block-start: 26px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto;;
 }
 
 .content__list-item:not(:last-child) {
